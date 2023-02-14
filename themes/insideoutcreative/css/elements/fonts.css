@@ -1,0 +1,123 @@
+.text-white * {
+  color: white;
+}
+
+.text-white a:hover {
+  color: white;
+}
+
+.text-accent,
+a {
+  color: var(--accent-primary);
+}
+
+.text-accent-secondary {
+  color: var(--accent-secondary);
+}
+
+.text-accent-tertiary {
+  color: var(--accent-tertiary);
+}
+
+.text-accent {
+  color: var(--accent-primary);
+}
+
+.text-gray {
+  color: #585556;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 3px black;
+}
+
+.text-black {
+  color: black;
+}
+
+a.text-black:hover {
+  color: black;
+}
+
+.lh-1 {
+  line-height: 1;
+}
+
+.ls-1 {
+  letter-spacing: 1em;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.wp-block-quote {
+  border-left: 2px solid;
+  margin: 0 0 1.75em;
+  padding-left: 1em;
+  font-style: italic;
+  font-size: 18px;
+}
+
+html,
+body {
+  font-family: "proxima_novaregular";
+}
+
+.light {
+  font-family: "proxima_nova_altlight";
+}
+
+.thin {
+  font-family: "proxima_novathin";
+}
+
+.bold,
+strong {
+  font-family: "proxima_novabold";
+}
+
+.arrows li {
+  position: relative;
+  list-style: none;
+  color: #a4a3a3;
+  font-style: italic;
+  font-family: "proxima_novabold";
+}
+
+.arrows li:before {
+  content: "";
+  background: url('https://insideoutcreative.io/wp-content/uploads/2023/02/Arrow-Right-Gold.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 5px;
+  left: -30px;
+}
+
+blockquote {
+  font-size: 90%;
+}
+
+.cormorant-garamond {
+  font-family: cormorant-garamond, serif;
+}
+
+.cormorant-garamond.bold {
+  font-weight: 700;
+}
+
+.itc-blair-bold {
+  font-family: 'blairitc_ttbold';
+}
+
+/* 
+font-family: cormorant-garamond, serif; 
+font-weight:300;
+font-weight:400;
+font-weight:500;
+font-weight:600;
+font-weight:700;
+*/

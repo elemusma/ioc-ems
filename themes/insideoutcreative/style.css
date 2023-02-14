@@ -1,0 +1,22 @@
+/* 
+
+Theme Name: Inside Out Creative
+Theme Author: Inside Out Creative
+Theme Author URI: https://insideoutcreative.com/
+
+*/
+
+:root {
+    --primary: #f26522;
+    --secondary: #0f2849;
+}
+
+.logged-in header.position-fixed {
+    margin-top: 32px;
+}
+
+@media only screen and (max-width:767px) {
+    .logged-in header.position-fixed {
+        margin-top: 45px;
+    }
+}
