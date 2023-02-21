@@ -148,11 +148,14 @@ endwhile; endif;
         if( $featured_posts ):
             echo '<div class="container">';
             echo '<div class="row">';
+            $postsCounter = 0;
             foreach( $featured_posts as $post ): 
                 // Setup this post for WP functions (variable must be named $post).
                 setup_postdata($post);
+                $postsCounter++;
                 echo '<div class="col-lg-4 col-md-6">';
 
+                echo '<div class="aos-animation" data-aos="fade-up" data-aos-delay="' . $postsCounter . '00">';
                 echo '<div class="bg-accent w-100 mb-5" style="height:3px;"></div>';
 
                 echo '<a href="' . get_the_permalink() . '" class="">';
@@ -169,6 +172,7 @@ endwhile; endif;
                 echo get_the_excerpt();
                 
                 echo '</div>';
+                echo '</div>'; // end of col
             endforeach;
             // Reset the global post object so that the rest of the page works correctly.
             wp_reset_postdata(); 
@@ -182,7 +186,7 @@ endwhile; endif;
     if(have_rows('process_group')): while(have_rows('process_group')): the_row();
     echo '<section class="position-relative content-section ' . get_sub_field('classes') . '" style="background:#464646;padding:75px 0;' . get_sub_field('style') . '" id="' . get_sub_field('id') . '">';
 
-    echo get_template_part('partials/borders-gold');
+    // echo get_template_part('partials/borders-gold');
 
     $bgImg = get_sub_field('background_image');
 
@@ -215,6 +219,7 @@ endwhile; endif;
 
         echo '<div class="col-lg-4 col-md-6 text-white mb-5 col-services" style="text-decoration:none;">';
 
+        echo '<div class="aos-animation" data-aos="fade-in" data-aos-delay="' . $pagesCounter . '00">';
         if(get_sub_field('title_above')){
             echo '<span class="bold text-accent-secondary text-center d-block">' . get_sub_field('title_above') . '</span>';
         }
@@ -270,6 +275,8 @@ endwhile; endif;
         echo '</div>';
 
         echo '</div>';
+
+        echo '</div>';
         echo '</div>'; // end of col
         // echo '</a>';
         endwhile;
@@ -290,6 +297,44 @@ endwhile; endif;
     
     echo '</section>';
 endwhile; endif;    
+} elseif($layout == 'Text Columns'){
+    if(have_rows('text_columns_group')): while(have_rows('text_columns_group')): the_row();
+    echo '<section class="position-relative text-columns text-white ' . get_sub_field('classes') . '" style="background:#00adb7;padding:75px 0;' . get_sub_field('style') . '" id="' . get_sub_field('id') . '">';
+
+    echo get_template_part('partials/borders-gold');
+
+    $bgImg = get_sub_field('background_image');
+
+    if($bgImg){
+        echo wp_get_attachment_image($bgImg['id'],'full','',[
+            'class'=>'w-100 h-100 position-absolute bg-img',
+            'style'=>'top:0;left:0;object-fit:cover;'
+        ]);
+    }
+
+    if(have_rows('columns_repeater')):
+        $columnsRepeater = 0;
+        echo '<div class="container-fluid">';
+            echo '<div class="row">';
+            while(have_rows('columns_repeater')): the_row();
+            $columnsRepeater++;
+            echo '<div class="col-lg-2 col-md-3 text-center">';
+
+            if($columnsRepeater != 1){
+                echo '<div class="bg-accent h-100 position-absolute" style="top:0;left:0;width:2px;"></div>';
+            }
+
+            echo '<span class="d-block" style="font-size:40px;">' . get_sub_field('title') . '</span>';
+            echo '<span class="d-block bold">' . get_sub_field('subtitle') . '</span>';
+
+            echo '</div>';
+            endwhile;
+            echo '</div>';
+        echo '</div>';
+    endif;
+
+    echo '</section>';
+    endwhile; endif;
 }
 endwhile; endif;
 ?>

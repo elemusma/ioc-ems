@@ -61,9 +61,16 @@ function ems_stylesheets_footer() {
     wp_enqueue_style('aos-css', get_theme_file_uri('/aos/aos.css'));
 
 	// jquery fittext
-	wp_enqueue_script('jquery-min-js', get_theme_file_uri('/jquery-fittext/jquery.min.js'));
-    wp_enqueue_script('jquery-fittext', get_theme_file_uri('/jquery-fittext/jquery.fittext.js'));
-    wp_enqueue_script('jquery-fittext-custom', get_theme_file_uri('/jquery-fittext/fittext.js'));
+	// wp_enqueue_script('jquery-min-js', get_theme_file_uri('/jquery-fittext/jquery.min.js'));
+    // wp_enqueue_script('jquery-fittext', get_theme_file_uri('/jquery-fittext/jquery.fittext.js'));
+    // wp_enqueue_script('jquery-fittext-custom', get_theme_file_uri('/jquery-fittext/fittext.js'));
+	
+	//counter
+
+    // wp_enqueue_script('jquery-easing-counter', get_theme_file_uri('/js/jquery.easing.js'));
+    // wp_enqueue_script('jquery-counter-min', get_theme_file_uri('/js/jquery.counter.min.js'));
+    // wp_enqueue_script('counterup-cdn', '//unpkg.com/counterup2@2.0.2/dist/index.js');
+    wp_enqueue_script('counter-custom', get_theme_file_uri('/js/counter.js'));
 	// jquery modal
 	// wp_enqueue_script('jquery-modal-js', get_theme_file_uri('/jquery-modal/jquery.modal.min.js'));
 	// wp_enqueue_style('jquery-modal-css', get_theme_file_uri('/jquery-modal/jquery.modal.min.css'));
