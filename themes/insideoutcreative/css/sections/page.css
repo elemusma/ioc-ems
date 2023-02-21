@@ -1,9 +1,8 @@
-.about {
+/* .about {
   padding: 0 0 27px;
 }
 
 .about-middle {
-  /* background: rgba(95, 92, 104, .71); */
   background: #f7f7f7;
   padding: 1rem;
   z-index: 1;
@@ -64,7 +63,6 @@
 
 .about-details h5 {
   color: #beb0a9;
-  /* transform: translate(105px, 0); */
   font-size: 2rem;
   width: 80%;
   font-weight: 300 !important;
@@ -78,4 +76,35 @@
     top: -2%;
     height: 105%;
   }
+} */
+
+/* start of process */
+.hover-box {
+  opacity: 0;
 }
+
+.col-services-hover:hover .hover-box {
+  opacity: 1;
+}
+
+.col-services-hover-content li {
+  position: relative;
+  list-style: none;
+  color: #2a3136;
+  font-style: italic;
+  font-family: "proxima_novabold";
+}
+
+.col-services-hover-content li:before {
+  content: "";
+  background: url('https://insideoutcreative.io/wp-content/uploads/2023/02/Arrow-Right-White.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 5px;
+  left: -30px;
+}
+
+/* end of process */
