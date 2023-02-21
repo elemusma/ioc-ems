@@ -37,7 +37,7 @@ endwhile; endif;
     $imageSide = get_sub_field('image_side');
     $link = get_sub_field('link');
 
-        echo '<section class="position-relative content-image ' . get_sub_field('classes') . '" style="padding:100px 0;' . get_sub_field('style') . '">';
+        echo '<section class="position-relative content-image ' . get_sub_field('classes') . '" style="padding:100px 0;margin:50px 0;' . get_sub_field('style') . '">';
         if($bgImg):
         echo wp_get_attachment_image($bgImg['id'],'full','',['class'=>'position-absolute w-100 h-100','style'=>'top:0;left:0;object-fit:cover;']);
         endif;
@@ -113,7 +113,7 @@ endwhile; endif;
     endwhile; endif;
 } elseif($layout == 'Big Image'){
     if(have_rows('big_image_group')): while(have_rows('big_image_group')): the_row();
-    echo '<section class="position-relative content-image pt-5 pb-5 ' . get_sub_field('classes') . '" style="' . get_sub_field('style') . '">';
+    echo '<section class="position-relative content-image ' . get_sub_field('classes') . '" style="' . get_sub_field('style') . '">';
         $bgImg = get_sub_field('background_image');
         if($bgImg):
         echo wp_get_attachment_image($bgImg['id'],'full','',['class'=>'position-absolute w-100 h-100','style'=>'top:0;left:0;object-fit:cover;']);
@@ -122,6 +122,59 @@ endwhile; endif;
         $img = get_sub_field('image');
 
         echo wp_get_attachment_image($img['id'],'full','',['class'=>'w-100 h-100']);
+
+    echo '</section>';
+    endwhile; endif;
+} elseif($layout == 'News'){
+    if(have_rows('news_group')): while(have_rows('news_group')): the_row();
+    echo '<section class="position-relative content-image ' . get_sub_field('classes') . '" style="padding:100px 0;' . get_sub_field('style') . '">';
+        $bgImg = get_sub_field('background_image');
+        if($bgImg):
+        echo wp_get_attachment_image($bgImg['id'],'full','',['class'=>'position-absolute w-100 h-100','style'=>'top:0;left:0;object-fit:cover;']);
+        endif;
+
+        echo '<div class="container">';
+        echo '<div class="row">';
+        echo '<div class="col-12">';
+
+        echo get_sub_field('content');
+
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+
+        $featured_posts = get_sub_field('relationship');
+
+        if( $featured_posts ):
+            echo '<div class="container">';
+            echo '<div class="row">';
+            foreach( $featured_posts as $post ): 
+                // Setup this post for WP functions (variable must be named $post).
+                setup_postdata($post);
+                echo '<div class="col-lg-4 col-md-6">';
+
+                echo '<div class="bg-accent w-100 mb-5" style="height:3px;"></div>';
+
+                echo '<a href="' . get_the_permalink() . '" class="">';
+                echo '<div class="img-hover overflow-h">';
+                    the_post_thumbnail('full',array(
+                        'class'=>'w-100',
+                        'style'=>'height:250px;object-fit:cover;'
+                    ));
+                echo '</div>';
+                echo '</a>';
+                
+                echo '<span class="d-block mt-3 mb-4">' . get_the_date() . '</span>';
+                echo '<h3 class="h5 mb-0"><a href="' . get_the_permalink() . '" class="text-black bold">' . get_the_title() . '</a></h3>';
+                echo get_the_excerpt();
+                
+                echo '</div>';
+            endforeach;
+            // Reset the global post object so that the rest of the page works correctly.
+            wp_reset_postdata(); 
+            echo '</div>';
+            echo '</div>';
+        endif;
 
     echo '</section>';
     endwhile; endif;
