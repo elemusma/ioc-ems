@@ -301,7 +301,7 @@ endwhile; endif;
     if(have_rows('text_columns_group')): while(have_rows('text_columns_group')): the_row();
     echo '<section class="position-relative text-columns text-white ' . get_sub_field('classes') . '" style="background:#00adb7;padding:75px 0;' . get_sub_field('style') . '" id="' . get_sub_field('id') . '">';
 
-    echo get_template_part('partials/borders-gold');
+    // echo get_template_part('partials/borders-gold');
 
     $bgImg = get_sub_field('background_image');
 
@@ -315,13 +315,17 @@ endwhile; endif;
     if(have_rows('columns_repeater')):
         $columnsRepeater = 0;
         echo '<div class="container-fluid">';
-            echo '<div class="row">';
+            echo '<div class="row justify-content-center">';
             while(have_rows('columns_repeater')): the_row();
             $columnsRepeater++;
-            echo '<div class="col-lg-2 col-md-3 text-center">';
+            echo '<div class="col-lg-2 col-md-4 text-center mb-4">';
 
             if($columnsRepeater != 1){
-                echo '<div class="bg-accent h-100 position-absolute" style="top:0;left:0;width:2px;"></div>';
+                echo '<div class="bg-accent h-100 position-absolute d-md-block d-none" style="top:0;left:0;width:2px;"></div>';
+
+                // echo '<div class="text-center">';
+                echo '<div class="bg-accent w-50 ml-auto mr-auto d-md-none d-block mt-4 mb-4" style="top:0;left:0;height:2px;"></div>';
+                // echo '</div>';
             }
 
             echo '<span class="d-block" style="font-size:40px;">' . get_sub_field('title') . '</span>';

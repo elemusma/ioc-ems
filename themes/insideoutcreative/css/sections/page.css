@@ -1,3 +1,7 @@
+section {
+  overflow: hidden;
+}
+
 /* .about {
   padding: 0 0 27px;
 }

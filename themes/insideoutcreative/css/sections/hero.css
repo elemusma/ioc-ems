@@ -6,6 +6,10 @@
     .logged-in .secondary-nav {
         margin-top: 43px;
     }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
 }
 
 .img-hero {
