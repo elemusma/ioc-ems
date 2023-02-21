@@ -113,6 +113,12 @@ blockquote {
   font-family: 'blairitc_ttbold';
 }
 
+h2,
+.h2,
+.itc-blair {
+  font-family: 'blairitc_ttlight';
+}
+
 /* 
 font-family: cormorant-garamond, serif; 
 font-weight:300;

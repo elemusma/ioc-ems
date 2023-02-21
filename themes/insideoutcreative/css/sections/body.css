@@ -1,6 +1,7 @@
 :root {
   --accent-primary: #00ffff;
   --accent-secondary: #182236;
+  --accent-tertiary: #620a0a;
 }
 
 html {
@@ -149,8 +150,9 @@ hr.text-white {
 
 .divider {
   border-top: 2px solid var(--accent-primary);
-  width: 200px;
-  margin: 10px auto;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .spacer {
