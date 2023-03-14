@@ -92,7 +92,7 @@ echo '</div>';
 
 echo '</header>';
 
-if(!is_single()){
+if(is_front_page()){
     echo '<section class="hero position-relative" style="
     padding-top:300px;
     padding-bottom:100px;">';
@@ -145,30 +145,30 @@ if(!is_single()){
 
 
 
-    if(!is_front_page()) {
-    echo '<div class="container pt-5 pb-5 text-white text-center">';
-    echo '<div class="row">';
-    echo '<div class="col-md-12">';
-    if(is_page() || !is_front_page()){
-    echo '<h1 class="">' . get_the_title() . '</h1>';
-    } elseif(is_single()){
-    echo '<h1 class="">' . get_single_post_title() . '</h1>';
-    } elseif(is_author()){
-    echo '<h1 class="">Author: ' . get_the_author() . '</h1>';
-    } elseif(is_tag()){
-    echo '<h1 class="">' . get_single_tag_title() . '</h1>';
-    } elseif(is_category()){
-    echo '<h1 class="">' . get_single_cat_title() . '</h1>';
-    } elseif(is_archive()){
-    echo '<h1 class="">' . get_archive_title() . '</h1>';
-    }
-    elseif(!is_front_page() && is_home()){
-    echo '<h1 class="">' . get_the_title(133) . '</h1>';
-    }
-    echo '</div>';
-    echo '</div>';
-    echo '</div>';
-    }
+    // if(!is_front_page()) {
+    // echo '<div class="container pt-5 pb-5 text-white text-center">';
+    // echo '<div class="row">';
+    // echo '<div class="col-md-12">';
+    // if(is_page() || !is_front_page()){
+    // echo '<h1 class="">' . get_the_title() . '</h1>';
+    // } elseif(is_single()){
+    // echo '<h1 class="">' . get_single_post_title() . '</h1>';
+    // } elseif(is_author()){
+    // echo '<h1 class="">Author: ' . get_the_author() . '</h1>';
+    // } elseif(is_tag()){
+    // echo '<h1 class="">' . get_single_tag_title() . '</h1>';
+    // } elseif(is_category()){
+    // echo '<h1 class="">' . get_single_cat_title() . '</h1>';
+    // } elseif(is_archive()){
+    // echo '<h1 class="">' . get_archive_title() . '</h1>';
+    // }
+    // elseif(!is_front_page() && is_home()){
+    // echo '<h1 class="">' . get_the_title(133) . '</h1>';
+    // }
+    // echo '</div>';
+    // echo '</div>';
+    // echo '</div>';
+    // }
 
     echo '</section>';
 }
