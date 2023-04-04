@@ -741,7 +741,8 @@ final class GF_Entry_List_Table extends WP_List_Table {
 			$sort_field_meta = GFAPI::get_field( $form_id, $sort_field );
 
 			if ( $sort_field_meta instanceof GF_Field ) {
-				$is_numeric = $sort_field_meta->get_input_type() == 'number';
+				$numeric_fields = array( 'number', 'total', 'calculation', 'price', 'quantity', 'shipping', 'singleshipping', 'product', 'singleproduct' );
+				$is_numeric = in_array( $sort_field_meta->get_input_type(), $numeric_fields );
 			} else {
 				$entry_meta = GFFormsModel::get_entry_meta( $form_id );
 				$is_numeric = rgars( $entry_meta, $sort_field . '/is_numeric' );
@@ -1943,13 +1944,13 @@ final class GF_Entry_List_Table extends WP_List_Table {
 			function getSelectAllText() {
 				var count;
 				count = jQuery("#the-list tr.entry_row:visible:not('#gform-select-all-message')").length;
-				return gformStrings.allEntriesOnPageAreSelected.format(count) + " <a href='javascript:void(0)' onclick='selectAllEntriesOnAllPages();'>" + gformStrings.selectAll.format(gformVars.countAllEntries) + "</a>";
+				return gformStrings.allEntriesOnPageAreSelected.gformFormat(count) + " <a href='javascript:void(0)' onclick='selectAllEntriesOnAllPages();'>" + gformStrings.selectAll.gformFormat(gformVars.countAllEntries) + "</a>";
 			}
 
 			function getSelectAllTr() {
 				var t = getSelectAllText();
 				var colspan = jQuery("#the-list").find("tr:first td").length + 2;
-				return "<tr id='gform-select-all-message' class='no-items' style='display:none;background-color:lightyellow;text-align:center;'><td colspan='{0}'>{1}</td></tr>".format(colspan, t);
+				return "<tr id='gform-select-all-message' class='no-items' style='display:none;background-color:lightyellow;text-align:center;'><td colspan='{0}'>{1}</td></tr>".gformFormat(colspan, t);
 			}
 			function toggleSelectAll(visible) {
 				if (gformVars.countAllEntries <= gformVars.perPage) {
@@ -1976,7 +1977,7 @@ final class GF_Entry_List_Table extends WP_List_Table {
 
 			function selectAllEntriesOnAllPages() {
 				var trHtmlClearSelection;
-				trHtmlClearSelection = gformStrings.allEntriesSelected.format(gformVars.countAllEntries) + " <a href='javascript:void(0);' onclick='clearSelectAllEntries();'>" + gformStrings.clearSelection + "</a>";
+				trHtmlClearSelection = gformStrings.allEntriesSelected.gformFormat(gformVars.countAllEntries) + " <a href='javascript:void(0);' onclick='clearSelectAllEntries();'>" + gformStrings.clearSelection + "</a>";
 				jQuery("#all_entries").val("1");
 				jQuery("#gform-select-all-message td").html(trHtmlClearSelection);
 			}
@@ -2002,11 +2003,22 @@ final class GF_Entry_List_Table extends WP_List_Table {
 				});
 			}
 
-			String.prototype.format = function () {
+			if ( ! String.prototype.gformFormat ) {
+				String.prototype.gformFormat = function() {
+					var args = arguments;
+					return this.replace( /{(\d+)}/g, function( match, number ) {
+						return typeof args[ number ] != 'undefined' ? args[ number ] : match;
+					} );
+				};
+			}
+
+			// deprecated. remove in 2.8
+			String.prototype.format = function() {
 				var args = arguments;
-				return this.replace(/{(\d+)}/g, function (match, number) {
-					return typeof args[number] != 'undefined' ? args[number] : match;
-				});
+				console.warn( 'String.format will be replaced with String.gformFormat in Gravity Forms version 2.8.' );
+				return this.replace( /{(\d+)}/g, function( match, number ) {
+					return typeof args[ number ] != 'undefined' ? args[ number ] : match;
+				} );
 			};
 
 			// end Select All

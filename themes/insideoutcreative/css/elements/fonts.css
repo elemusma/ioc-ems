@@ -19,6 +19,10 @@ a {
   color: var(--accent-tertiary);
 }
 
+.text-accent-quaternary {
+  color: var(--accent-quaternary);
+}
+
 .text-accent {
   color: var(--accent-primary);
 }
@@ -117,6 +121,10 @@ h2,
 .h2,
 .itc-blair {
   font-family: 'blairitc_ttlight';
+}
+
+.ls-2 {
+  letter-spacing: .2em;
 }
 
 /* 

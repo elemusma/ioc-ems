@@ -1113,8 +1113,21 @@ html[dir="rtl"] .gform-settings-field .gform-settings-input__container + .gform-
 }
 
 .gform-settings-choice--visual input[type="checkbox"], .gform-settings-choice--visual input[type="radio"] {
-		display: none;
+		border: 0 none;
+		clip: rect(0.125rem, 0.125rem, 0.125rem, 0.125rem);
+		-webkit-clip-path: inset(50%);
+		        clip-path: inset(50%);
+		height: 0.0625rem;
+		margin: -0.125rem;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 0.0625rem;
 	}
+
+.gform-settings-choice--visual input[type="checkbox"]:focus + label::before, .gform-settings-choice--visual input[type="radio"]:focus + label::before {
+					box-shadow: 0 0 0 2px #bed8ed;
+				}
 
 .gform-settings-choice--visual label {
 		background: #fff;
@@ -1383,6 +1396,10 @@ html[dir="rtl"] .gform-settings-field .gform-settings-input__container + .gform-
 .gf_browser_gecko .gform-settings-generic-map__table td .gform-st-icon--circle-plus::after, .gf_browser_gecko .gform-settings-generic-map__table td .gform-st-icon--circle-minus::after {
 				margin-left: -0.03125rem;
 			}
+
+.gform-settings-generic-map__column--buttons {
+	min-width: 3rem;
+}
 
 .gform-settings-generic-map__column--key {
 
