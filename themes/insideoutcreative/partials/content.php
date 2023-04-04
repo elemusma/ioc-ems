@@ -19,7 +19,7 @@ if($bgImg){
 }
 
 echo '<div class="container">';
-echo '<div class="row justify-content-center">';
+echo '<div class="row justify-content-center" data-aos="fade-up">';
 
 echo '<div class="col-lg-6 text-center ' . get_sub_field('column_classes') . '" style="' . get_sub_field('column_style') . '">';
 echo get_sub_field('content');
@@ -387,10 +387,10 @@ echo '</section>';
     $img = get_sub_field('image');
 
     $teamCounter++;
-    if($teamCounter > 3){
+    if($teamCounter > 4){
         $teamCounter = 1;
     }
-        echo '<div class="col-lg-4 col-md-6 mb-4 text-center">';
+        echo '<div class="col-lg-3 col-md-6 mb-4 text-center">';
         echo '<div data-aos="fade-up" data-aos-delay="' . $teamCounter . '00">';
 
         echo wp_get_attachment_image($img['id'],'full','',[
@@ -430,7 +430,7 @@ echo '</section>';
     echo '<div class="container">';
 
     // if(have_rows('thumbnail_content_repeater')):
-    echo '<div class="row justify-content-center ' . get_sub_field('row_classes') . '" style="' . get_sub_field('row_style') . '">';
+    echo '<div class="row justify-content-center ' . get_sub_field('row_classes') . '" style="' . get_sub_field('row_style') . '" data-aos="fade-up">';
         // while(have_rows('thumbnail_content_repeater')): the_row();
     echo '<div class="col-lg-4 col-md-6 pt-2 pb-2 ' . get_sub_field('image_column_classes') . '" style="' . get_sub_field('image_column_style') . '"">';
     $image = get_sub_field('image');
