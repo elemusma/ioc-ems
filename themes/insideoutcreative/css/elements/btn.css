@@ -26,3 +26,12 @@
     color: white;
     text-decoration: none;
 }
+
+.btn-main.solid {
+    background: #a5f9f9;
+}
+
+.btn-main.solid:hover {
+    background: #0E6AB4;
+    border-color: #0E6AB4;
+}

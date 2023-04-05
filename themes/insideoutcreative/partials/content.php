@@ -92,23 +92,6 @@ endwhile; endif;
 
         echo '</div>';
         echo '</section>';
-        
-        // echo '<section class="mb-5" style="margin-top:-35px;">';
-        // echo '<div class="container">';
-        // if($link):
-        //     echo '<div class="row">';
-        //     echo '<div class="col-12 text-center">';
-            
-        //     $link_url = $link['url'];
-        //     $link_title = $link['title'];
-        //     $link_target = $link['target'] ? $link['target'] : '_self';
-        //     echo '<a class="btn-main secondary" href="' . esc_url( $link_url ) . '" target="' . esc_attr( $link_target ) . '">' . esc_html( $link_title ) . '</a>';
-            
-        //     echo '</div>';
-        //     echo '</div>';
-        // endif;
-        // echo '</div>';
-        // echo '</section>';
 
     endwhile; endif;
 } elseif($layout == 'Big Image'){
@@ -458,6 +441,48 @@ echo '</section>';
     // endif;
 
     echo '</div>';
+
+    echo '</section>';
+    endwhile; endif;
+} elseif($layout == 'Text Columns Plain'){
+    if(have_rows('text_columns_plain_group')): while(have_rows('text_columns_plain_group')): the_row();
+    echo '<section class="position-relative text-columns-plain ' . get_sub_field('classes') . '" style="' . get_sub_field('style') . '" id="' . get_sub_field('id') . '">';
+
+    // echo get_template_part('partials/borders-gold');
+
+    $bgImg = get_sub_field('background_image');
+
+    if($bgImg){
+        echo wp_get_attachment_image($bgImg['id'],'full','',[
+            'class'=>'w-100 h-100 position-absolute bg-img',
+            'style'=>'top:0;left:0;object-fit:cover;'
+        ]);
+    }
+
+    if(have_rows('columns_repeater')):
+        $columnsRepeater = 0;
+        echo '<div class="container-fluid">';
+            echo '<div class="row justify-content-center">';
+            while(have_rows('columns_repeater')): the_row();
+            $columnsRepeater++;
+            echo '<div class="col-lg-4 col-md-4 text-center mb-4">';
+
+            if($columnsRepeater != 1){
+                echo '<div class="bg-accent h-100 position-absolute d-md-block d-none" style="top:0;left:0;width:2px;"></div>';
+
+                // echo '<div class="text-center">';
+                echo '<div class="bg-accent w-50 ml-auto mr-auto d-md-none d-block mt-4 mb-4" style="top:0;left:0;height:2px;"></div>';
+                // echo '</div>';
+            }
+
+            echo '<span class="d-block bold" style="">' . get_sub_field('title') . '</span>';
+            echo get_sub_field('subtitle');
+
+            echo '</div>';
+            endwhile;
+            echo '</div>';
+        echo '</div>';
+    endif;
 
     echo '</section>';
     endwhile; endif;

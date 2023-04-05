@@ -1,6 +1,6 @@
 input.gform_button.button {
-  background-color: var(--accent-primary);
-  border-color: var(--accent-primary);
+  background-color: var(--accent-secondary);
+  border-color: var(--accent-secondary);
   border-radius: 25px;
   padding: 10px 35px;
   cursor: pointer;
@@ -14,8 +14,8 @@ input.gform_button.button {
 }
 
 input.gform_button.button:hover {
-  background-color: var(--accent-secondary);
-  border-color: var(--accent-secondary);
+  background-color: var(--accent-primary);
+  border-color: var(--accent-primary);
 }
 
 .gform_footer.top_label {
