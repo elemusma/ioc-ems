@@ -486,6 +486,60 @@ echo '</section>';
 
     echo '</section>';
     endwhile; endif;
+} elseif($layout == 'Locations'){
+    if(have_rows('locations_group')): while(have_rows('locations_group')): the_row();
+    echo '<section class="position-relative text-columns-plain ' . get_sub_field('classes') . '" style="padding:100px 0px 0px;' . get_sub_field('style') . '" id="' . get_sub_field('id') . '">';
+
+    // echo get_template_part('partials/borders-gold');
+
+    $bgImg = get_sub_field('background_image');
+
+    if($bgImg){
+        echo wp_get_attachment_image($bgImg['id'],'full','',[
+            'class'=>'w-100 h-100 position-absolute bg-img',
+            'style'=>'top:0;left:0;object-fit:cover;'
+        ]);
+    }
+    echo '<div class="bg-white position-absolute w-100 h-100" style="top:0;left:0;opacity:.9;"></div>';
+
+    echo '<div class="container">';
+    echo '<div class="row justify-content-center">';
+    echo '<div class="col-12 text-center pb-4 ' . get_sub_field('column_classes') . '" style="' . get_sub_field('column_style') . '">';
+    echo '<div data-aos="fade-right">';
+        echo get_sub_field('content');
+
+    echo '</div>';
+    echo '</div>';
+    echo '</div>';
+    echo '</div>';
+
+    if(have_rows('columns_repeater')):
+        $columnsRepeater = 0;
+        echo '<div class="container-fluid">';
+            echo '<div class="row justify-content-center">';
+            while(have_rows('columns_repeater')): the_row();
+            $columnsRepeater++;
+            echo '<div class="col-lg-4 col-md-4 text-center pt-5 pb-4 ' . get_sub_field('column_classes') . '" style="' . get_sub_field('column_style') . '">';
+
+            if($columnsRepeater != 1){
+                echo '<div class="bg-accent position-absolute d-md-block d-none" style="top:50%;left:0;width:2px;height:80%;transform:translate(0,-50%);"></div>';
+
+                // echo '<div class="text-center">';
+                echo '<div class="bg-accent w-50 ml-auto mr-auto d-md-none d-block mt-4 mb-4" style="top:0;left:0;height:2px;"></div>';
+                // echo '</div>';
+            }
+
+            echo '<span class="d-block bold" style="">' . get_sub_field('title') . '</span>';
+            echo get_sub_field('subtitle');
+
+            echo '</div>';
+            endwhile;
+            echo '</div>';
+        echo '</div>';
+    endif;
+
+    echo '</section>';
+    endwhile; endif;
 }
 endwhile; endif;
 ?>
