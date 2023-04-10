@@ -96,7 +96,7 @@ endwhile; endif;
     endwhile; endif;
 } elseif($layout == 'Big Image'){
     if(have_rows('big_image_group')): while(have_rows('big_image_group')): the_row();
-    echo '<section class="position-relative content-image ' . get_sub_field('classes') . '" style="' . get_sub_field('style') . '">';
+    echo '<section class="position-relative big-image ' . get_sub_field('classes') . '" style="' . get_sub_field('style') . '">';
         $bgImg = get_sub_field('background_image');
         if($bgImg):
         echo wp_get_attachment_image($bgImg['id'],'full','',['class'=>'position-absolute w-100 h-100','style'=>'top:0;left:0;object-fit:cover;']);
@@ -104,7 +104,11 @@ endwhile; endif;
 
         $img = get_sub_field('image');
 
-        echo wp_get_attachment_image($img['id'],'full','',['class'=>'w-100 h-100']);
+        echo wp_get_attachment_image($img['id'],'full','',[
+            'class'=>'w-100 h-100',
+            'style'=>'',
+            'data-aos'=>'fade-up'
+        ]);
 
     echo '</section>';
     endwhile; endif;
@@ -301,7 +305,12 @@ endwhile; endif;
             echo '<div class="row justify-content-center">';
             while(have_rows('columns_repeater')): the_row();
             $columnsRepeater++;
-            echo '<div class="col-lg-2 col-md-4 text-center mb-4">';
+
+            if($columnsRepeater > 7 ) {
+                $columnsRepeater = 1;
+            }
+
+            echo '<div class="col-lg-2 col-md-4 text-center mb-4" data-aos="fade-up" data-aos-delay="' . $columnsRepeater . '00">';
 
             if($columnsRepeater != 1){
                 echo '<div class="bg-accent h-100 position-absolute d-md-block d-none" style="top:0;left:0;width:2px;"></div>';
@@ -413,7 +422,7 @@ echo '</section>';
     echo '<div class="container">';
 
     // if(have_rows('thumbnail_content_repeater')):
-    echo '<div class="row justify-content-center ' . get_sub_field('row_classes') . '" style="' . get_sub_field('row_style') . '" data-aos="fade-up">';
+    echo '<div class="row justify-content-center align-items-center ' . get_sub_field('row_classes') . '" style="' . get_sub_field('row_style') . '" data-aos="fade-up">';
         // while(have_rows('thumbnail_content_repeater')): the_row();
     echo '<div class="col-lg-4 col-md-6 pt-2 pb-2 ' . get_sub_field('image_column_classes') . '" style="' . get_sub_field('image_column_style') . '"">';
     $image = get_sub_field('image');
@@ -429,7 +438,7 @@ echo '</section>';
 
     echo '<div class="col-lg-4 col-md-6 pt-2 pb-2 ' . get_sub_field('column_classes') . '" style="' . get_sub_field('column_style') . '">';
     echo '<div>';
-        echo '<span class="pt-4 d-inline-block">' . get_sub_field('title') . '</span>';
+        echo '<span class="d-inline-block">' . get_sub_field('title') . '</span>';
         echo '<div class="" style="color:#8d8c8a;">';
         echo get_sub_field('content');
         echo '</div>';
@@ -461,13 +470,20 @@ echo '</section>';
 
     if(have_rows('columns_repeater')):
         $columnsRepeater = 0;
+        $columnsRepeaterBorder = 0;
         echo '<div class="container-fluid">';
             echo '<div class="row justify-content-center">';
             while(have_rows('columns_repeater')): the_row();
             $columnsRepeater++;
-            echo '<div class="col-lg-4 col-md-4 text-center mb-4">';
+            $columnsRepeaterBorder++;
 
-            if($columnsRepeater != 1){
+            if($columnsRepeater > 3 ) {
+                $columnsRepeater = 1;
+            }
+
+            echo '<div class="col-lg-4 col-md-4 text-center mb-4" data-aos="fade-up" data-aos-delay="' . $columnsRepeater . '00">';
+
+            if($columnsRepeaterBorder != 1){
                 echo '<div class="bg-accent h-100 position-absolute d-md-block d-none" style="top:0;left:0;width:2px;"></div>';
 
                 // echo '<div class="text-center">';
@@ -515,13 +531,20 @@ echo '</section>';
 
     if(have_rows('columns_repeater')):
         $columnsRepeater = 0;
+        $columnsRepeaterBorder = 0;
         echo '<div class="container-fluid">';
             echo '<div class="row justify-content-center">';
             while(have_rows('columns_repeater')): the_row();
             $columnsRepeater++;
-            echo '<div class="col-lg-4 col-md-4 text-center pt-5 pb-4 ' . get_sub_field('column_classes') . '" style="' . get_sub_field('column_style') . '">';
+            $columnsRepeaterBorder++;
 
-            if($columnsRepeater != 1){
+            if($columnsRepeater > 3 ) {
+                $columnsRepeater = 1;
+            }
+
+            echo '<div class="col-lg-4 col-md-4 text-center pt-5 pb-4 ' . get_sub_field('column_classes') . '" style="' . get_sub_field('column_style') . '" data-aos="fade-up" data-aos-delay="' . $columnsRepeater . '00">';
+
+            if($columnsRepeaterBorder != 1){
                 echo '<div class="bg-accent position-absolute d-md-block d-none" style="top:50%;left:0;width:2px;height:80%;transform:translate(0,-50%);"></div>';
 
                 // echo '<div class="text-center">';

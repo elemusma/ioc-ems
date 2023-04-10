@@ -36,7 +36,7 @@ echo '<div class="col-12 text-center text-white">';
 
 echo get_template_part('partials/si');
 
-echo '<div class="text-gray-1 pt-4">';
+echo '<div class="text-gray-1 pt-4 text-center">';
 
 the_field('website_message','options');
 

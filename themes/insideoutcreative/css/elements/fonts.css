@@ -23,10 +23,6 @@ a {
   color: var(--accent-quaternary);
 }
 
-.text-accent {
-  color: var(--accent-primary);
-}
-
 .text-gray {
   color: #585556;
 }
@@ -113,8 +109,15 @@ blockquote {
   font-weight: 700;
 }
 
-.itc-blair-bold {
+.itc-blair-bold,
+h1,
+.h1 {
   font-family: 'blairitc_ttbold';
+}
+
+h1,
+.h1 {
+  color: var(--accent-secondary);
 }
 
 h2,

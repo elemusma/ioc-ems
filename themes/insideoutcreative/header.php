@@ -44,7 +44,7 @@ $logo = get_field('logo','options');
 if($logo){
 echo wp_get_attachment_image($logo['id'],'full',"",[
     'class'=>'w-100',
-    'style'=>'height:100px;object-fit:contain;object-position:left;',
+    'style'=>'height:75px;object-fit:contain;object-position:left;',
     'id'=>'logo-main'
 ]); 
 }
@@ -64,7 +64,7 @@ echo '</div>';
 
 
 echo '<div id="navMenuOverlay" class="position-fixed z-2"></div>';
-echo '<div class="col-lg-4 col-md-8 col-11 nav-items bg-white" id="navItems">';
+echo '<div class="col-lg-4 col-md-8 col-11 nav-items bg-light" id="navItems">';
 
 echo '<div class="pt-5 pb-5">';
 echo '<div class="close-menu">';
@@ -83,8 +83,15 @@ echo '</a>';
 echo '</div>';
 wp_nav_menu(array(
 'menu' => 'primary',
-'menu_class'=>'menu d-flex flex-wrap list-unstyled justify-content-center mb-0'
+'menu_class'=>'menu list-unstyled'
 )); 
+
+echo '<div class="pt-5">';
+
+the_field('website_message','options');
+
+echo '</div>';
+
 echo '</div>';
 echo '</div>';
 echo '</div>';

@@ -3,6 +3,14 @@ ul.menu li {
     position: relative;
 }
 
+ul.menu li a {
+    color: black;
+}
+
+ul#menu-primary li a {
+    font-size: 28px;
+}
+
 ul.menu>li.menu-item-has-children {
     margin-right: 18px;
 }
@@ -27,10 +35,10 @@ ul.menu>li.menu-item-has-children {
     }
 }
 
-ul.menu>li>a {
+/* ul.menu>li>a {
     padding: 0px 9px;
     color: black;
-}
+} */
 
 .current-menu-item>a,
 .current_page_parent>a,
@@ -41,21 +49,21 @@ ul.menu>li>a {
     text-decoration: underline;
 }
 
-.free-gift a {
+/* .free-gift a {
     font-weight: 400 !important;
 }
 
 .nav .shopping-cart.menu svg {
     fill: white;
     height: 15px;
-}
+} */
 
-@media screen and (min-width:1200px) {
+/* @media screen and (min-width:1200px) {
     ul.menu li:first-child a {
         border: none;
         padding-left: 0;
     }
-}
+} */
 
 /* @media screen and (max-width:1199px) { */
 /* .nav ul.menu {

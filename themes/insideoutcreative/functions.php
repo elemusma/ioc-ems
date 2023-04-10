@@ -214,6 +214,17 @@ function spacer_shortcode( $atts, $content = null ) {
 
 add_shortcode( 'spacer', 'spacer_shortcode' );
 
+function current_year( $atts, $content = null ) {
+
+	$current_year = date("Y");
+
+	return $current_year;
+
+	// [currentyear]
+}
+
+add_shortcode( 'currentyear', 'current_year' );
+
 // ENABLE WOOCOMMERCE
 // add_action('after_setup_theme',function() {
 //     add_theme_support('woocommerce');
