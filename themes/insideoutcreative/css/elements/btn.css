@@ -32,6 +32,18 @@
 }
 
 .btn-main.solid:hover {
-    background: #0E6AB4;
-    border-color: #0E6AB4;
+    background: var(--accent-quinary);
+    border-color: var(--accent-quinary);
+}
+
+.btn-main.solid.dark {
+    background: var(--accent-secondary);
+    border: 1px solid var(--accent-secondary);
+    color: white;
+    border-radius: 25px;
+}
+
+.btn-main.solid.dark:hover {
+    background: var(--accent-quinary);
+    border-color: var(--accent-quinary);
 }
