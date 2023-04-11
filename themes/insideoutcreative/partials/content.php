@@ -206,7 +206,7 @@ endwhile; endif;
 
         echo '<div class="col-lg-4 col-md-6 mb-5 col-services" style="text-decoration:none;">';
 
-        echo '<div class="aos-animation" data-aos="fade-in" data-aos-delay="' . $pagesCounter . '00">';
+        echo '<div class="aos-animation h-100" data-aos="fade-in" data-aos-delay="' . $pagesCounter . '00">';
         if(get_sub_field('title_above')){
             echo '<span class="bold text-accent-secondary text-center d-block">' . get_sub_field('title_above') . '</span>';
         }
@@ -224,9 +224,9 @@ endwhile; endif;
         // echo '</div>';
         // end of hover box
 
-        echo '<div class="position-absolute w-100 h-100 bg-accent" style="top:0;left:0;mix-blend-mode:multiply;box-shadow: inset 0px 0px 5px rgba(0,0,0,.9);"></div>';
+        echo '<div class="position-absolute w-100 h-100 bg-accent" style="top:0;left:0;mix-blend-mode:multiply;box-shadow: inset 0px 0px 5px rgba(0,0,0,.9);opacity:.75;"></div>';
 
-        echo '<div class="hover-box bg-accent position-absolute w-100 h-100" style="top:0;left:0;transition:all .25s ease-in-out;box-shadow: inset 0px 0px 5px rgba(0,0,0,.9);"></div>';
+        // echo '<div class="hover-box bg-accent position-absolute w-100 h-100" style="top:0;left:0;transition:all .25s ease-in-out;box-shadow: inset 0px 0px 5px rgba(0,0,0,.9);"></div>';
 
         echo '<div class="position-absolute w-100 h-100 bg-accent-quaternary" style="top:0;left:0;mix-blend-mode:overlay;opacity:.28;border:2px solid var(--accent-primary);"></div>';
 
@@ -247,19 +247,21 @@ endwhile; endif;
         // echo '<span class="plus-sign">&plus;</span>';
         // echo '</div>';
 
-        echo '<img src="https://insideoutcreative.io/wp-content/uploads/2023/02/Circle-Ellipses.png" alt="" height="30px" width="auto" class="pr-3">';
+        echo '<img src="https://insideoutcreative.io/wp-content/uploads/2023/02/Circle-Ellipses.png" alt="" height="20px" width="auto" class="pr-3">';
 
         echo '<div class="position-relative">';
         echo '<h3 class="title" style="color:#4d4c4c;font-size:32px;">' . get_sub_field('title') . '</h3>';
 
-        if(get_sub_field('content')){
-            echo get_sub_field('content');
-        }
+        
 
         // echo '<div class="position-absolute" style="border-bottom:8px solid var(--accent-primary);width:75px;bottom:-15px;left:0;"></div>';
 
         echo '</div>';
         echo '</div>';
+
+        if(get_sub_field('content')){
+            echo get_sub_field('content');
+        }
 
 
         

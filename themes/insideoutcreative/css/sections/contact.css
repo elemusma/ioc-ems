@@ -32,8 +32,38 @@ input[type=file] {
   box-shadow: none !important;
 }
 
+.ginput_container.ginput_container_fileupload:after {
+  content: "";
+  background-image: url('https://insideoutcreative.io/wp-content/uploads/2023/04/Upload-File.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 230px;
+  max-width: 90%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  pointer-events: none;
+}
+
+.ginput_container.ginput_container_fileupload {
+  position: relative;
+  height: 275px;
+}
+
+.ginput_container.ginput_container_fileupload input {
+  opacity: 0;
+  height: 245px;
+  cursor: pointer;
+}
+
+.ginput_container_fileupload .gfield_description {
+  display: none !important;
+}
+
 /* custom form */
-input,
+/* input,
 textarea {
   width: 100%;
   border: 1px solid #eaeaea;
@@ -70,6 +100,5 @@ textarea:focus-visible {
 
 input::placeholder,
 textarea::placeholder {
-  /* color: red; */
   font-weight: 900;
-}
+} */
