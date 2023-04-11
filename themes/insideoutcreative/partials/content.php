@@ -204,7 +204,7 @@ endwhile; endif;
         $pagesCounter++;
         // sprintf("%02d", $pagesCounter)
 
-        echo '<div class="col-lg-4 col-md-6 text-white mb-5 col-services" style="text-decoration:none;">';
+        echo '<div class="col-lg-4 col-md-6 mb-5 col-services" style="text-decoration:none;">';
 
         echo '<div class="aos-animation" data-aos="fade-in" data-aos-delay="' . $pagesCounter . '00">';
         if(get_sub_field('title_above')){
@@ -231,7 +231,7 @@ endwhile; endif;
         echo '<div class="position-absolute w-100 h-100 bg-accent-quaternary" style="top:0;left:0;mix-blend-mode:overlay;opacity:.28;border:2px solid var(--accent-primary);"></div>';
 
         echo '<div class="position-relative pb-3 h-100">';
-        echo '<span class="h1 d-block coromant-garamond" style="font-size:41px;">' . sprintf("%02d", $pagesCounter) . '</span>';
+        echo '<span class="h1 d-block coromant-garamond number" style="font-size:41px;">' . sprintf("%02d", $pagesCounter) . '</span>';
 
         // echo '<span class="mb-5 d-block coromant-garamond pl-5 h4" style="">' . get_sub_field('title') . '</span>';
 
@@ -250,7 +250,11 @@ endwhile; endif;
         echo '<img src="https://insideoutcreative.io/wp-content/uploads/2023/02/Circle-Ellipses.png" alt="" height="30px" width="auto" class="pr-3">';
 
         echo '<div class="position-relative">';
-        echo '<h3 class="" style="color:#4d4c4c;font-size:32px;">' . get_sub_field('title') . '</h3>';
+        echo '<h3 class="title" style="color:#4d4c4c;font-size:32px;">' . get_sub_field('title') . '</h3>';
+
+        if(get_sub_field('content')){
+            echo get_sub_field('content');
+        }
 
         // echo '<div class="position-absolute" style="border-bottom:8px solid var(--accent-primary);width:75px;bottom:-15px;left:0;"></div>';
 
