@@ -379,7 +379,7 @@ echo '</section>';
 
     echo '<div class="container">';
     if(have_rows('team_repeater')):
-    echo '<div class="row">';
+    echo '<div class="row justify-content-center">';
     $teamCounter = 0;
     while(have_rows('team_repeater')): the_row();
     $img = get_sub_field('image');
