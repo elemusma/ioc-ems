@@ -74,7 +74,7 @@ echo '</div>';
 echo '<div id="navMenuOverlay" class="position-fixed z-2"></div>';
 echo '<div class="col-lg-4 col-md-8 col-11 nav-items bg-light" id="navItems">';
 
-echo '<div class="pt-5 pb-5">';
+echo '<div class="pt-5 pb-4">';
 echo '<div class="close-menu">';
 echo '<div>';
 echo '<span id="navMenuClose" class="close h1">X</span>';
