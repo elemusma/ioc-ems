@@ -7,7 +7,7 @@ ul.menu li a {
     color: black;
 }
 
-ul#menu-primary li a {
+ul#menu-primary>li>a {
     font-size: 28px;
 }
 
@@ -15,7 +15,7 @@ ul.menu>li.menu-item-has-children {
     margin-right: 18px;
 }
 
-.dropdown-arrow {
+/* .dropdown-arrow {
     clip-path: polygon(100% 0, 0 0, 50% 100%);
     -webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);
     -ms-clip-path: polygon(100% 0, 0 0, 50% 100%);
@@ -33,7 +33,7 @@ ul.menu>li.menu-item-has-children {
         width: 18px;
         height: 15px;
     }
-}
+} */
 
 /* ul.menu>li>a {
     padding: 0px 9px;
@@ -92,10 +92,10 @@ ul.menu>li.current-menu-item>a {
     display: flex !important;
 }
 
-.sub-menu-parent .sub-menu-parent {
+/* .sub-menu-parent .sub-menu-parent {
     height: 100%;
     position: relative;
-}
+} */
 
 a#navToggle {
     cursor: pointer;
@@ -155,7 +155,7 @@ div#navItems.activate {
 
 /* } */
 
-@media screen and (min-width:1200px) {
+/* @media screen and (min-width:1200px) {
     ul.sub-menu {
         padding: 0 20px;
         position: absolute;
@@ -166,7 +166,7 @@ div#navItems.activate {
         transition: all .5s ease-in-out;
         min-width: 100%;
     }
-}
+} */
 
 /* @media screen and (max-width:1199px) {
     ul.sub-menu {
@@ -174,7 +174,7 @@ div#navItems.activate {
     }
 } */
 
-ul.sub-menu {
+/* ul.sub-menu {
     list-style: none;
     overflow: hidden;
     transition: all .25s ease-in-out;
@@ -186,7 +186,7 @@ ul.sub-menu li {
 
 ul.sub-menu li a {
     color: black;
-}
+} */
 
 /* for blog and other pages */
 .page-template-blog header#header,
