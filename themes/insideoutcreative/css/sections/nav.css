@@ -1,6 +1,7 @@
 ul.menu li {
     padding: 9px 0;
     position: relative;
+    list-style: none;
 }
 
 ul.menu li a {

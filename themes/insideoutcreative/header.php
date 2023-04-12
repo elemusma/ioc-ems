@@ -27,7 +27,7 @@ echo '<div class="nav">';
 echo '<div class="container-fluid">';
 echo '<div class="row align-items-center justify-content-end">';
 
-echo '<div class="col-lg-2 col-6">';
+echo '<div class="col-lg-2 col-4">';
 echo '<a id="navToggle" class="nav-toggle">';
 echo '<div>';
 echo '<div class="line-1 bg-black"></div>';
@@ -35,6 +35,14 @@ echo '<div class="line-2 bg-black"></div>';
 echo '<div class="line-3 bg-black"></div>';
 echo '</div>';
 echo '</a>';
+
+echo '<div class="desktop-hidden">';
+wp_nav_menu(array(
+    'menu' => 'Contact',
+    'menu_class'=>'menu d-md-flex flex-wrap list-unstyled justify-content-center mb-0 text-center'
+));
+echo '</div>';
+
 echo '</div>';
 
 echo '<div class="col-lg-7 col-8">';
@@ -52,7 +60,7 @@ echo wp_get_attachment_image($logo['id'],'full',"",[
 echo '</a>';
 echo '</div>';
 
-echo '<div class="col-lg-3 col-4">';
+echo '<div class="col-lg-3 col-4 mobile-hidden">';
 
 wp_nav_menu(array(
     'menu' => 'Contact',
