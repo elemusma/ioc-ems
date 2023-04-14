@@ -436,7 +436,7 @@ echo '</section>';
     if($image){
         echo wp_get_attachment_image($image['id'],'full','',[
             'class'=>'w-100 h-auto ' . get_sub_field('image_classes'),
-            'style'=>'max-width:175px;' . get_sub_field('image_style')
+            'style'=>'max-width:175px;max-height:200px;object-fit:cover;object-position:top;' . get_sub_field('image_style')
         ]);
     }
 
