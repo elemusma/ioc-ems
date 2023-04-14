@@ -212,7 +212,7 @@ endwhile; endif;
         }
 
         // echo '<a href="' . get_the_permalink() . '" class="col-lg-4 col-md-6 text-white mb-5 col-services" style="text-decoration:none;">';
-        echo '<div class="position-relative pl-5 pr-5 h-100 col-services-hover" style="padding-top:50px;padding-bottom:50px;">';
+        echo '<div class="position-relative pl-5 pr-5 h-100 col-services-hover" style="padding-top:50px;padding-bottom:50px;transition:all .25s ease-in-out;">';
 
         // start of hover box
         // echo '<div class="hover-box bg-accent-dark position-absolute w-100 h-100 z-1 d-flex align-items-center justify-content-center pl-5 pr-5 col-services-hover-content" style="border:6px solid #fbcf02;top:0;left:0;transition:all .25s ease-in-out;">';
@@ -224,7 +224,7 @@ endwhile; endif;
         // echo '</div>';
         // end of hover box
 
-        echo '<div class="position-absolute w-100 h-100 bg-accent" style="top:0;left:0;mix-blend-mode:multiply;box-shadow: inset 0px 0px 5px rgba(0,0,0,.9);opacity:.75;"></div>';
+        echo '<div class="position-absolute w-100 h-100 bg-accent" style="top:0;left:0;box-shadow: inset 0px 0px 5px rgba(0,0,0,.9);opacity:.5;"></div>';
 
         // echo '<div class="hover-box bg-accent position-absolute w-100 h-100" style="top:0;left:0;transition:all .25s ease-in-out;box-shadow: inset 0px 0px 5px rgba(0,0,0,.9);"></div>';
 
