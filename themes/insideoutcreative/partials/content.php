@@ -171,18 +171,39 @@ endwhile; endif;
     endwhile; endif;
 } elseif($layout == 'Process'){
     if(have_rows('process_group')): while(have_rows('process_group')): the_row();
-    echo '<section class="position-relative content-section ' . get_sub_field('classes') . '" style="background:#464646;padding:75px 0;' . get_sub_field('style') . '" id="' . get_sub_field('id') . '">';
+    $bgImg = get_sub_field('background_image');
+    echo '<section class="position-relative content-section ' . get_sub_field('classes') . '" style="background:url(' . wp_get_attachment_image_url($bgImg['id'], 'full') . ');background-size:cover;background-attachment:fixed;padding:125px 0px 75px;' . get_sub_field('style') . '" id="' . get_sub_field('id') . '">';
 
     // echo get_template_part('partials/borders-gold');
 
-    $bgImg = get_sub_field('background_image');
 
-    if($bgImg){
-        echo wp_get_attachment_image($bgImg['id'],'full','',[
-            'class'=>'w-100 h-100 position-absolute bg-img',
-            'style'=>'top:0;left:0;object-fit:cover;'
-        ]);
-    }
+    // if($bgImg){
+    //     echo wp_get_attachment_image($bgImg['id'],'full','',[
+    //         'class'=>'w-100 h-100 position-absolute bg-img',
+    //         'style'=>'top:0;left:0;object-fit:cover;'
+    //     ]);
+    // }
+
+    echo '<div class="position-absolute w-100" style="top:0;left:0;">';
+    echo '<?xml version="1.0" encoding="UTF-8"?>
+    <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 945.19 82.31">
+      <defs>
+        <style>
+          .cls-1 {
+            fill: #fff;
+            stroke: #fff;
+            stroke-miterlimit: 10;
+          }
+        </style>
+      </defs>
+      <g id="Layer_1-2" data-name="Layer 1">
+        <path class="cls-1" d="m.5.5h944.19v81.17S492.92-31.27.5,81.67V.5Z"/>
+      </g>
+    </svg>';
+    echo '</div>';
+
+    echo '<div class="position-absolute w-100 h-100" style="background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 15%, rgba(255,255,255,0) 100%);"></div>';
 
     echo '<div class="container">';
     echo '<div class="row">';
