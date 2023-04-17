@@ -172,7 +172,7 @@ endwhile; endif;
 } elseif($layout == 'Process'){
     if(have_rows('process_group')): while(have_rows('process_group')): the_row();
     $bgImg = get_sub_field('background_image');
-    echo '<section class="position-relative content-section ' . get_sub_field('classes') . '" style="background:url(' . wp_get_attachment_image_url($bgImg['id'], 'full') . ');background-size:cover;background-attachment:fixed;padding:125px 0px 75px;' . get_sub_field('style') . '" id="' . get_sub_field('id') . '">';
+    echo '<section class="position-relative content-section bg-attachment ' . get_sub_field('classes') . '" style="background:url(' . wp_get_attachment_image_url($bgImg['id'], 'full') . ');background-size:cover;background-attachment:fixed;padding:125px 0px 75px;' . get_sub_field('style') . '" id="' . get_sub_field('id') . '">';
 
     // echo get_template_part('partials/borders-gold');
 
