@@ -94,11 +94,11 @@ wp_nav_menu(array(
 'menu_class'=>'menu list-unstyled'
 )); 
 
-echo '<div class="pt-5">';
+// echo '<div class="pt-5">';
 
-the_field('website_message','options');
+// the_field('website_message','options');
 
-echo '</div>';
+// echo '</div>';
 
 echo '</div>';
 echo '</div>';

@@ -252,7 +252,7 @@ endwhile; endif;
         echo '<div class="position-absolute w-100 h-100 bg-accent-quaternary" style="top:0;left:0;mix-blend-mode:overlay;opacity:.28;border:2px solid var(--accent-primary);"></div>';
 
         echo '<div class="position-relative pb-3 h-100">';
-        echo '<span class="h1 d-block coromant-garamond number" style="font-size:41px;">' . sprintf("%02d", $pagesCounter) . '</span>';
+        // echo '<span class="h1 d-block coromant-garamond number" style="font-size:41px;">' . sprintf("%02d", $pagesCounter) . '</span>';
 
         // echo '<span class="mb-5 d-block coromant-garamond pl-5 h4" style="">' . get_sub_field('title') . '</span>';
 
@@ -414,7 +414,7 @@ echo '</section>';
 
         echo wp_get_attachment_image($img['id'],'full','',[
             'class'=>'w-auto',
-            'style'=>'height:200px;object-fit:cover;object-position:top;'
+            'style'=>'height:300px;object-fit:cover;object-position:top;'
         ]);
 
         echo '<div>';

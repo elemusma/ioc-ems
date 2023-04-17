@@ -10,6 +10,8 @@ ul.menu li a {
 
 ul#menu-primary>li>a {
     font-size: 22px;
+    padding: 9px 0;
+    display: block;
 }
 
 ul.menu>li.menu-item-has-children {
