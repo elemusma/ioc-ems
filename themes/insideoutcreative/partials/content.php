@@ -203,7 +203,7 @@ endwhile; endif;
     echo '</div>';
 
     echo '<div class="position-absolute w-100 h-100" style="background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,1) 15%, rgba(255,255,255,0) 100%);"></div>';
+    background: linear-gradient(0deg, rgba(255,255,255,1) 5%, rgba(255,255,255,0) 100%);"></div>';
 
     echo '<div class="container">';
     echo '<div class="row">';
