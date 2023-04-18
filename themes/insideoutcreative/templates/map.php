@@ -28,7 +28,7 @@
 
             if(have_rows('locations_repeater')): while(have_rows('locations_repeater')): the_row();
             echo '<div class="d-flex">';
-                echo '<div class="label d-flex justify-content-center align-items-center mr-2" style="background:' . get_sub_field('label_color') . ';width:30px;height:30px;border-radius:50%;">';
+                echo '<div class="label d-flex justify-content-center align-items-center mr-2 small" style="background:' . get_sub_field('label_color') . ';width:25px;height:25px;border-radius:50%;">';
                 echo '<span>' . get_sub_field('label') . '</span>';
                 echo '</div>';
                 echo '<div class="small">';
