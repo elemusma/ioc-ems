@@ -6,8 +6,11 @@
   color: white;
 }
 
-.text-accent,
 a {
+  color: var(--accent-secondary);
+}
+
+.text-accent {
   color: var(--accent-primary);
 }
 
