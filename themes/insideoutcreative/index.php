@@ -25,7 +25,10 @@ echo '<div class="col-md-6 pr-lg-5 col-blog text-white" style="margin-bottom: 50
 
     
     echo '<div class="w-100 h-100 d-flex align-items-end blog-content position-relative overflow-h img-hover">';
-    the_post_thumbnail('full',array('class'=>'position-absolute w-100 h-100'));
+    the_post_thumbnail('full',array(
+      'class'=>'position-absolute w-100 h-100',
+      'style'=>'top:0;left:0;object-fit:cover;'
+    ));
 echo '<div>';
 
   echo '<div class="overlay position-absolute"></div>';
