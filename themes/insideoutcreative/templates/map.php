@@ -214,7 +214,7 @@ function initMap() {
           };
           const markerObject = new google.maps.Marker(markerOptions);
           const infoWindow = new google.maps.InfoWindow({
-            content: `<div><h3>${marker.title}</h3><p>${marker.description}</p><a href="${marker.link}" target="_blank">Learn more</a></div>`,
+            content: `<div><h3>${marker.title}</h3><p>${marker.description}</p><a href="${marker.link}" target="_blank" class="bold">Get directions</a></div>`,
           });
           markerObject.addListener("click", () => {
             infoWindow.open(map, markerObject);
