@@ -7,18 +7,24 @@ echo '<div class="container">';
 echo '<div class="row">';
 
 echo '<div class="col-12 pb-4">';
-echo '<h1>' . get_the_title(2889) . '</h1>';
+$posts_page_id = get_option( 'page_for_posts' );
+$posts_page_title = get_the_title( $posts_page_id );
 
+echo '<h1>' . $posts_page_title . '</h1>';
+
+echo '</div>';
 echo '</div>';
 
 if ( have_posts() ) : 
-    
+  echo '<div class="row">';
+  echo '<div class="col-lg-9">';
+  echo '<div class="row">';
     while ( have_posts() ) : the_post();
 
 echo '<div class="col-md-6 pr-lg-5 col-blog text-white" style="margin-bottom: 50px;">';
 
     
-    echo '<div class="w-100 h-100 d-flex align-items-end justify-content-center blog-content position-relative overflow-h">';
+    echo '<div class="w-100 h-100 d-flex align-items-end blog-content position-relative overflow-h img-hover">';
     the_post_thumbnail('full',array('class'=>'position-absolute w-100 h-100'));
 echo '<div>';
 
@@ -56,6 +62,7 @@ echo '</a>';
 
 endwhile;
 
+echo '</div>';
 // default pagination from wordpress
 // if ( get_next_posts_link() ) {
 // next_posts_link();
@@ -77,7 +84,14 @@ echo '</div>';
 
 // the next two lines break the code, not sure why
 // else :
-// echo '<p>No posts found. :(</p>';
+  // echo '<p>No posts found. :(</p>';
+  echo '</div>';
+
+  echo '<div class="col-lg-3">';
+  echo get_template_part('partials/sidebar');
+  echo '</div>';
+
+  echo '</div>';
 
 endif;
 

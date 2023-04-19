@@ -37,6 +37,7 @@ input#searchsubmit {
   cursor: pointer;
   box-shadow: none !important;
   width: 100%;
+  transition: all .25s ease-in-out;
 }
 
 input#searchsubmit:hover {

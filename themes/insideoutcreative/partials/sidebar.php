@@ -1,6 +1,6 @@
 <?php 
 
-echo '<div class="col-md-3 sidebar order-2 order-md-1">';
+// echo '<div class="col-md-3 sidebar order-2 order-md-1">';
 echo '<div class="card p-3 mb-2">';
 get_search_form();
 echo '</div>';
@@ -20,6 +20,6 @@ echo '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>
 } wp_reset_postdata();
 echo '</ul>';
 echo '</div>';
-echo '</div>';
+// echo '</div>';
 
 ?>
