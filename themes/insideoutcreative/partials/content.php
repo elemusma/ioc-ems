@@ -225,7 +225,7 @@ endwhile; endif;
         $pagesCounter++;
         // sprintf("%02d", $pagesCounter)
 
-        echo '<div class="col-lg-4 col-md-6 mb-5 col-services ' . get_sub_field('column_classes') . '" style="text-decoration:none;' . get_sub_field('column_style') . '">';
+        echo '<div class="col-lg-4 col-md-6 mb-5 col-services ' . get_sub_field('column_classes') . '" style="text-decoration:none;' . get_sub_field('column_style') . '" id="' . get_sub_field('column_id') . '">';
 
         echo '<div class="aos-animation h-100" data-aos="fade-in" data-aos-delay="' . $pagesCounter . '00">';
         if(get_sub_field('title_above')){
