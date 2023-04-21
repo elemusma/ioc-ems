@@ -29,7 +29,7 @@ textarea#comment {
 
 input#submit,
 input#searchsubmit {
-  background: var(--accent-primary);
+  background: var(--accent-quinary);
   border: none;
   padding: 10px 30px;
   color: white;
@@ -53,15 +53,15 @@ input#s {
 /* pagination */
 span.page-numbers.current {
   background: white !important;
-  border: 2px solid var(--accent-primary);
+  border: 2px solid var(--accent-quinary);
   padding: 10px 20px !important;
-  color: var(--accent-primary) !important;
+  color: var(--accent-quinary) !important;
   margin: 0 5px 10px !important;
 }
 
 .page-numbers {
-  background: var(--accent-primary) !important;
-  border: 2px solid var(--accent-primary);
+  background: var(--accent-quinary) !important;
+  border: 2px solid var(--accent-quinary);
   padding: 10px 20px !important;
   color: white !important;
   margin: 0 5px 10px !important;
@@ -70,7 +70,7 @@ span.page-numbers.current {
 }
 
 .page-numbers:hover {
-  color: var(--accent-primary) !important;
+  color: var(--accent-quinary) !important;
   background: white !important;
 }
 

@@ -1,19 +1,19 @@
 .bg-accent-outline {
-    border: 2px solid var(--accent-primary);
+    border: 2px solid var(--accent-quinary);
     border-radius: 0;
     padding: 5px 25px;
     transition: all .25s ease-in-out;
 }
 
 .bg-accent-outline:hover {
-    border: 2px solid var(--accent-primary);
-    background: var(--accent-primary);
+    border: 2px solid var(--accent-secondary);
+    background: var(--accent-secondary);
     color: white;
 }
 
 .btn-main {
     /* background: var(--accent-primary); */
-    border: 1px solid var(--accent-primary);
+    border: 1px solid var(--accent-quinary);
     padding: 10px 25px;
     transition: all .25s ease-in-out;
     display: inline-block;
@@ -22,7 +22,7 @@
 }
 
 .btn-main:hover {
-    background: var(--accent-primary);
+    background: var(--accent-secondary);
     color: white;
     text-decoration: none;
 }
@@ -46,4 +46,15 @@
 .btn-main.solid.dark:hover {
     background: var(--accent-quinary);
     border-color: var(--accent-quinary);
+}
+
+.wp-block-button__link {
+    background-color: var(--accent-quinary);
+    transition: all .25s ease-in-out;
+}
+
+.wp-block-button__link:hover {
+    background-color: var(--accent-secondary);
+    color: white;
+    text-decoration: none;
 }
