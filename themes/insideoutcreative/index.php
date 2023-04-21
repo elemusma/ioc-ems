@@ -90,9 +90,9 @@ echo '</div>';
   // echo '<p>No posts found. :(</p>';
   echo '</div>';
 
-  echo '<div class="col-lg-3">';
+  // echo '<div class="col-lg-3">';
   echo get_template_part('partials/sidebar');
-  echo '</div>';
+  // echo '</div>';
 
   echo '</div>';
 

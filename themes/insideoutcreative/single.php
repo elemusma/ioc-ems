@@ -2,8 +2,8 @@
 echo '<section class="pt-5 pb-5 body">';
 echo '<div class="container">';
 echo '<div class="row justify-content-center">';
-get_template_part('partials/sidebar');
-echo '<div class="col-lg-9 col-md-12 order-lg-2 order-1">';
+
+echo '<div class="col-lg-9 col-md-12 order-1">';
 
 echo '<p>' . get_the_time('F jS, Y') . '</p>';
 
@@ -15,6 +15,9 @@ endwhile; else:
 echo '<p>Sorry, no posts matched your criteria.</p>';
 endif;
 echo '</div>';
+
+get_template_part('partials/sidebar');
+
 // <div class="col-lg-3">
 // </div>
 echo '</div>';
