@@ -6,6 +6,7 @@
 <?php 
 
 if(get_field('header', 'options')) { the_field('header', 'options'); }
+if(get_field('header_code')) { the_field('header_code'); }
 
 if(get_field('custom_css')) { 
 ?> 
@@ -20,6 +21,7 @@ wp_head();
 <body <?php body_class(); ?>>
 <?php
 if(get_field('body','options')) { the_field('body','options'); }
+if(get_field('body_code')) { the_field('body_code'); }
 echo '<div class="blank-space"></div>';
 echo '<header class="position-relative pt-3 pb-3 z-3 box-shadow bg-white w-100" style="top:0;left:0;">';
 
